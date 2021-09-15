@@ -5,6 +5,7 @@ type Query {
 
 type Mutation {
     createTweet(body: String):Tweet
+    likeTweet(id:ID!):Tweet
 }
 
 type Tweet {

@@ -12,7 +12,11 @@ export default {
         createTweet: async (_, args, ctx, info) => {
             const newTweet = tweetRepository.create(args.body);
             return newTweet;
+        },
+        likeTweet: async (_, { id }, ctx, info) => {
+            return await tweetRepository.likeTweet(id);
         }
+
     },
     Tweet:{
         author: async (tweet) => {

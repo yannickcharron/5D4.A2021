@@ -10,6 +10,10 @@ class TweetRepository {
     retrieveAll() {
         return Tweets.find();
     }
+
+    likeTweet(id) {
+        return Tweets.findOneAndUpdate({_id:id}, {$inc:{'stats.likes':1}}, {new:true});
+    }
 }
 
 export default new TweetRepository();
